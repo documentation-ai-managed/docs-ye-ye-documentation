@@ -1,0 +1,135 @@
+---
+title: Configuration and Customization
+description: Learn how to configure and customize your Ye Ye Documentation space to match your project's needs and branding.
+---
+
+## Overview
+
+Configure Ye Ye Documentation to control access, match your brand, and connect with other tools. Start by setting permissions for team members, then customize themes using your brand color like `#3B82F6`. Finally, integrate external services for seamless workflows.
+
+<Columns cols={3}>
+  <Card title="Permissions" icon="shield" href="#permissions">
+    Manage who views and edits your docs.
+  </Card>
+  <Card title="Themes" icon="palette" href="#themes">
+    Apply custom colors and layouts.
+  </Card>
+  <Card title="Integrations" icon="plug" href="#integrations">
+    Connect with GitHub, Slack, and more.
+  </Card>
+</Columns>
+
+## Setting Permissions and Access
+
+Control access to your documentation space with role-based permissions. Assign roles like Viewer, Editor, or Admin to users or teams.
+
+<Steps>
+  <Step title="Navigate to Settings" icon="settings">
+    Open your Ye Ye space and select **Settings** from the sidebar.
+  </Step>
+  <Step title="Add Members" icon="users">
+    Go to the **Members** tab and invite users by email.
+  </Step>
+  <Step title="Assign Roles" icon="user-check">
+    Select a role from the dropdown for each member.
+
+    | Role   | View | Edit | Admin |
+    |--------|------|------|-------|
+    | Viewer | ✅   | ❌   | ❌    |
+    | Editor | ✅   | ✅   | ❌    |
+    | Admin  | ✅   | ✅   | ✅    |
+  </Step>
+  <Step title="Save Changes" icon="save">
+    Click **Update Permissions** to apply.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use group permissions for larger teams to simplify management.
+</Callout>
+
+## Customizing Themes and Layouts
+
+Tailor the appearance with custom themes. Update colors, fonts, and layouts via the configuration file.
+
+<Tabs>
+  <Tab title="JSON Config" icon="code">
+    Edit `ye-ye.config.json` in your repo root.
+
+    <CodeGroup tabs="JSON,YAML">
+```json
+{
+  "theme": {
+    "primaryColor": "#3B82F6",
+    "fontFamily": "Inter, sans-serif",
+    "layout": "sidebar"
+  }
+}
+```
+```yaml
+theme:
+  primaryColor: "#3B82F6"
+  fontFamily: "Inter, sans-serif"
+  layout: sidebar
+```
+    </CodeGroup>
+  </Tab>
+  <Tab title="CSS Variables" icon="css3">
+    Override defaults in custom CSS.
+
+````css
+:root {
+  --primary: #3B82F6;
+  --sidebar-width: 280px;
+}
+````
+  </Tab>
+</Tabs>
+
+<Callout kind="alert">
+  Test theme changes in preview mode before publishing.
+</Callout>
+
+## Integrating External Tools
+
+Connect Ye Ye Documentation to external services for automation and notifications.
+
+<Tabs>
+  <Tab title="GitHub" icon="github">
+    Sync docs with your repo.
+
+    <Steps>
+      <Step title="Generate Token">
+        Create a personal access token in GitHub settings.
+      </Step>
+      <Step title="Add Webhook">
+        Paste `YOUR_GITHUB_TOKEN` and repo URL in Ye Ye integrations.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Slack" icon="message-circle">
+    Get notifications on updates.
+
+    ```javascript
+    // Example Slack payload
+    {
+      "webhookUrl": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+      "channel": "#docs"
+    }
+    ```
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Integrations" default-open="false">
+  For custom tools, use webhooks with this payload structure:
+
+````json
+{
+  "event": "doc_updated",
+  "spaceId": "your-space-id",
+  "payload": { "page": "configuration.mdx" }
+}
+````
+</Expandable>
+
+Save all changes and redeploy your space to see updates live. Your customized Ye Ye Documentation now reflects your brand and workflows perfectly.

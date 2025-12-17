@@ -1,0 +1,115 @@
+---
+title: Welcome to Ye Ye Documentation
+description: An overview of Ye Ye Documentation, the default space for organizing and managing all your project documentation with ease.
+---
+
+## Overview
+
+Ye Ye Documentation provides a centralized space to organize, manage, and publish your project's documentation. You create structured pages, embed interactive components, and customize the look to match your brand. This default space handles everything from quickstarts to API references with built-in MDX support for rich content.
+
+<Callout kind="info">
+  Ye Ye Documentation uses MDX, so you combine Markdown with JSX components for dynamic pages.
+</Callout>
+
+## Key Benefits
+
+Ye Ye Documentation streamlines project management with these core advantages:
+
+<Columns cols={3}>
+  <Card title="Centralized Organization" icon="folder" href="/docs/organization">
+    Keep all docs in one place. Use hierarchies, search, and navigation to find content quickly.
+  </Card>
+  <Card title="Interactive Components" icon="components" href="/docs/components">
+    Embed tabs, steps, cards, and diagrams directly in pages for engaging guides.
+  </Card>
+  <Card title="Custom Branding" icon="palette" href="/docs/customization">
+    Apply your brand colors like `#3B82F6` and logos across the entire site.
+  </Card>
+</Columns>
+
+## Get Started in Minutes
+
+Follow these steps to set up your first documentation site:
+
+<Steps>
+  <Step title="Create Your Space" icon="plus">
+    Log in and select "New Documentation Space". Name it "Ye Ye Documentation".
+  </Step>
+  <Step title="Add Pages" icon="file-text">
+    Create `introduction.mdx` as your landing page. Use the file explorer to organize sections.
+  </Step>
+  <Step title="Customize Theme" icon="settings">
+    Edit `theme.config.js` to set your primary color to `#3B82F6`.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Deploy with one click. Share the live URL with your team.
+  </Step>
+</Steps>
+
+## Customization Options
+
+Tailor Ye Ye Documentation to your needs across platforms.
+
+<Tabs>
+  <Tab title="Theme Config" icon="palette">
+    Update your theme settings:
+
+    <CodeGroup tabs="JavaScript,TypeScript">
+    ```javascript
+    // theme.config.js
+    export default {
+      color: '#3B82F6',
+      logo: '/logo.svg',
+      nav: [
+        { title: 'Docs', href: '/docs' },
+        { title: 'API', href: '/api' }
+      ]
+    }
+    ```
+    ```typescript
+    // theme.config.ts
+    const config = {
+      color: '#3B82F6',
+      logo: '/logo.svg',
+      nav: [
+        { title: 'Docs', href: '/docs' },
+        { title: 'API', href: '/api' }
+      ]
+    } as const;
+    export default config;
+    ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="MDX Components" icon="code">
+    Enhance pages with components like `<Callout>` and `<Steps>`:
+
+    ```jsx
+    <Callout kind="tip">
+      Use `{brandColor}` for custom styles.
+    </Callout>
+
+    <Steps>
+      <Step title="Step 1">Your content here.</Step>
+    </Steps>
+    ```
+  </Tab>
+</Tabs>
+
+## Advanced Features
+
+<ExpandableGroup>
+  <Expandable title="Version Control Integration" default-open="true">
+    Connect your GitHub repo for automatic deploys. Push changes to `main` and see live updates in seconds.
+
+    ```bash
+    git add .
+    git commit -m "Update docs"
+    git push origin main
+    ```
+  </Expandable>
+  <Expandable title="Search and Analytics">
+    Enable full-text search and track page views. Monitor popular sections to refine your content.
+  </Expandable>
+</ExpandableGroup>
+
+Ye Ye Documentation scales with your project. Start simple and add features as needed. Explore the sidebar for more guides.

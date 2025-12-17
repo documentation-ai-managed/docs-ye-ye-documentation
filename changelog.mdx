@@ -1,0 +1,113 @@
+---
+title: Changelog
+description: A record of updates, new features, and improvements to Ye Ye Documentation over time.
+---
+
+## Overview
+
+Ye Ye Documentation keeps you informed with this changelog. You track all releases, new features, bug fixes, and enhancements here. Stay updated to leverage the latest improvements in your documentation workflow.
+
+<Callout kind="info">
+  Subscribe to our RSS feed or GitHub notifications to get changelog updates automatically delivered to you.
+</Callout>
+
+## Version History
+
+Review the most recent updates below. Each release includes detailed changes grouped by category.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+## New Features
+
+- Added support for custom brand colors in themes, like `#3B82F6` for your projects
+- Introduced `<Columns>` component for flexible grid layouts in docs
+
+## Improvements
+
+- Enhanced MDX parsing speed by 40% for larger documentation sites
+- Better error messages when escaping special characters like `{` or `<`
+
+## Bug Fixes
+
+- Fixed nested code block rendering with 4 backticks
+- Resolved heading hierarchy warnings in validation
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+## New Features
+
+- New `<Tabs>` component for platform-specific instructions
+- Integrated Lucide icons with auto-completion in editor
+
+## Bug Fixes
+
+- Corrected `<ParamField>` single-location attribute enforcement
+- Patched Mermaid code block parsing (no more `<Mermaid>` component errors)
+
+## Improvements
+
+- Optimized image loading with required `width` and `height` attributes
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+## New Features
+
+- Core MDX documentation engine with 15+ components
+- YAML frontmatter validation for titles and descriptions
+- Real-time preview for Ye Ye Documentation pages
+
+## Breaking Changes
+
+- Removed legacy H1 headings; always start with H2
+- Enforced double quotes in all JSX attributes
+
+## Initial Setup
+
+- Full component library including `<Steps>`, `<CodeGroup>`, and `<Callout>`
+</Update>
+
+## Quick Actions
+
+Use these cards to dive deeper into recent changes.
+
+<Columns cols={3}>
+  <Card title="Upgrade Guide" icon="download" href="/docs/upgrades">
+    Follow steps to update your Ye Ye Documentation site to the latest version.
+  </Card>
+  <Card title="Migration from v1.0" icon="arrow-right" href="/docs/migration">
+    Handle breaking changes smoothly with our detailed guide.
+  </Card>
+  <Card title="Contribute" icon="github" href="https://github.com/ye-ye/docs" target="_blank" cta="Fork Repo">
+    Help shape the future of Ye Ye Documentation.
+  </Card>
+</Columns>
+
+## Check Your Version
+
+Verify your installed version programmatically.
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+import { getVersion } from '@ye-ye/docs';
+
+console.log(getVersion()); // Outputs: "1.2.0"
+```
+```python
+from ye_ye_docs import get_version
+
+print(get_version())  # Outputs: 1.2.0
+```
+</CodeGroup>
+
+## Stay Updated
+
+<Steps>
+  <Step title="Subscribe" icon="bell">
+    Enable notifications in your GitHub repo settings.
+  </Step>
+  <Step title="Check Releases" icon="package">
+    Visit the releases page regularly for patch notes.
+  </Step>
+  <Step title="Test Beta" icon="zap">
+    Join our beta program via the dashboard.
+  </Step>
+</Steps>
